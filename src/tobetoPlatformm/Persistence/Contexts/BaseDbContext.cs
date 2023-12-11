@@ -23,6 +23,7 @@ public class BaseDbContext : DbContext
     public DbSet<Mission> Missions { get; set; }
     public DbSet<StreamVideo> StreamVideos { get; set; }
     public DbSet<Video> Videos { get; set; }
+    public DbSet<CourseRelation> CourseRelations { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

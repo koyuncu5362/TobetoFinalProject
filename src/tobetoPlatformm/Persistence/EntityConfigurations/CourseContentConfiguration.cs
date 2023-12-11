@@ -12,6 +12,7 @@ public class CourseContentConfiguration : IEntityTypeConfiguration<CourseContent
 
         builder.Property(cc => cc.Id).HasColumnName("Id").IsRequired();
         builder.Property(cc => cc.Header).HasColumnName("Header");
+        builder.Property(cc => cc.CourseId).HasColumnName("CourseId");
         builder.Property(cc => cc.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(cc => cc.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(cc => cc.DeletedDate).HasColumnName("DeletedDate");
@@ -19,6 +20,7 @@ public class CourseContentConfiguration : IEntityTypeConfiguration<CourseContent
         builder.HasMany(b => b.Videos);
         builder.HasMany(b => b.Missions);
         builder.HasMany(b => b.StreamVideos);
+        builder.HasOne(b => b.Course);
         builder.HasQueryFilter(cc => !cc.DeletedDate.HasValue);
     }
 }

@@ -23,6 +23,7 @@ using Application.Services.Manufacturs;
 using Application.Services.Missions;
 using Application.Services.StreamVideos;
 using Application.Services.Videos;
+using Application.Services.CourseRelations;
 
 namespace Application;
 
@@ -61,6 +62,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IMissionsService, MissionsManager>();
         services.AddScoped<IStreamVideosService, StreamVideosManager>();
         services.AddScoped<IVideosService, VideosManager>();
+        services.AddScoped<ICourseRelationsService, CourseRelationsManager>();
         return services;
     }
 

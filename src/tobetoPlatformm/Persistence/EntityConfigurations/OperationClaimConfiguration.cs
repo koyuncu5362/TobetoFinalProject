@@ -98,6 +98,14 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "Videos.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "Videos.Delete" });
         #endregion
+        #region CourseRelations
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseRelations.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseRelations.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseRelations.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseRelations.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseRelations.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseRelations.Delete" });
+        #endregion
         return seeds;
     }
 }

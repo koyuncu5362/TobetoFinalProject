@@ -11,7 +11,8 @@ public static class PersistenceServiceRegistration
 {
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
+        //services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
+        services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("TobetoPlatformDb")));
         services.AddScoped<IEmailAuthenticatorRepository, EmailAuthenticatorRepository>();
         services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
         services.AddScoped<IOtpAuthenticatorRepository, OtpAuthenticatorRepository>();
@@ -27,6 +28,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IMissionRepository, MissionRepository>();
         services.AddScoped<IStreamVideoRepository, StreamVideoRepository>();
         services.AddScoped<IVideoRepository, VideoRepository>();
+        services.AddScoped<ICourseRelationRepository, CourseRelationRepository>();
         return services;
     }
 }

@@ -10,6 +10,9 @@ public class Video : Entity<Guid>
     public string SubType { get; set; }
     public int? Like { get; set; }
     public int? Views { get; set; }
+    //public Guid ContentId { get; set; }
+    public Guid ManufacturerId { get; set; }
+    public Guid CategoryId { get; set; }
     public DateTime Duration { get; set; }
     public virtual Category  CategoryNavigation { get; set; }
     public virtual Manufactur ManufacturNavigation { get; set; }//Üretici Firma

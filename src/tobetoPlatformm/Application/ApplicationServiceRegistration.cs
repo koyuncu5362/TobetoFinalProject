@@ -1,4 +1,4 @@
-﻿using Application.Services.AuthenticatorService;
+using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
 using Application.Services.UsersService;
 using Core.Application.Pipelines.Authorization;
@@ -15,6 +15,14 @@ using Core.Mailing.MailKitImplementations;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Application.Services.Categories;
+using Application.Services.Courses;
+using Application.Services.CourseContents;
+using Application.Services.Instructors;
+using Application.Services.Manufacturs;
+using Application.Services.Missions;
+using Application.Services.StreamVideos;
+using Application.Services.Videos;
 
 namespace Application;
 
@@ -45,6 +53,14 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
         services.AddScoped<IUserService, UserManager>();
 
+        services.AddScoped<ICategoriesService, CategoriesManager>();
+        services.AddScoped<ICoursesService, CoursesManager>();
+        services.AddScoped<ICourseContentsService, CourseContentsManager>();
+        services.AddScoped<IInstructorsService, InstructorsManager>();
+        services.AddScoped<IManufactursService, ManufactursManager>();
+        services.AddScoped<IMissionsService, MissionsManager>();
+        services.AddScoped<IStreamVideosService, StreamVideosManager>();
+        services.AddScoped<IVideosService, VideosManager>();
         return services;
     }
 
